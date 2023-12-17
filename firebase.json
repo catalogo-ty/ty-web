@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "ty-web",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

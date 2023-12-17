@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ty-db-37cc0": {
+      "hosting": {
+        "ty-web": [
+          "ty-app"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ty-db-37cc0"
+  }
+}

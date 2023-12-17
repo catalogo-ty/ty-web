@@ -109,6 +109,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "ty-web:build:production",
+              "serveTarget": "ty-web:serve:production"
+            },
+            "development": {
+              "buildTarget": "ty-web:build:development",
+              "serveTarget": "ty-web:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
