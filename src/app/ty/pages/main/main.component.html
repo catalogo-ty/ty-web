@@ -1,7 +1,22 @@
+
 <mat-toolbar color="primary">
     <button (click)="sidenavleft.toggle()" mat-icon-button>
         <mat-icon>menu</mat-icon>
     </button>
+
+    <span class="spacer"></span>
+
+    @if (isDarkMode) {
+    <button (click)="onSetTheme('light_mode')" mat-icon-button>
+        <mat-icon>dark_mode</mat-icon>
+    </button>
+    }
+    @else {
+    <button (click)="onSetTheme('dark_mode')" mat-icon-button>
+        <mat-icon>light_mode</mat-icon>
+    </button>
+    }
+
 </mat-toolbar>
 
 <mat-sidenav-container>
@@ -16,6 +31,6 @@
 
     <!-- Sidebar derecho -->
     <mat-sidenav #sidenavright opened [ngStyle]="{width:'200px'}" mode="side" position="end">
-<span>derecho</span>
+        <span>derecho</span>
     </mat-sidenav>
 </mat-sidenav-container>

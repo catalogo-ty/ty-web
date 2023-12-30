@@ -1,0 +1,43 @@
+/* Cargar modulo base de angular material*/
+@use '@angular/material' as mat;
+@include mat.core();
+
+// Definir variable para tema personalizado
+$light-theme: mat.define-light-theme(
+    (   
+        // paletas de colores que quiero utilizar
+        color: (
+            primary: mat.define-palette(mat.$cyan-palette, 400), 
+            accent: mat.define-palette(mat.$light-green-palette, 200),
+
+        ),
+        typography: mat.define-typography-config(),
+        density: 0
+    )
+);
+
+$dark-theme: mat.define-dark-theme(
+    (   
+        // paletas de colores que quiero utilizar
+        color: (
+            primary: mat.define-palette(mat.$deep-purple-palette, A200), 
+            accent: mat.define-palette(mat.$teal-palette, 200), 
+
+        ),
+        typography: mat.define-typography-config(),
+        density: 0
+    )
+);
+
+// Aplicar el tema
+@include mat.all-component-themes($light-theme);
+
+.dark_mode {
+    @include mat.all-component-colors($dark-theme);
+
+    --mat-sidenav-content-background-color: #111827;
+    --mat-sidenav-container-background-color: #1f2937;
+}
+
+$my-typography: mat.define-typography-config();
+@include mat.typography-hierarchy($my-typography);

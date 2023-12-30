@@ -11,7 +11,7 @@ export class SidebarComponent {
     {
       router: '/crear',
       icon: 'playlist_add',
-      label: 'Crear'
+      label: 'Crear',
     },
     {
       router: '/listar',
