@@ -7,6 +7,7 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
 import { TyRoutingModule } from './ty-routing.module';
 import { MainComponent } from './pages/main/main.component';
 import { MaterialModule } from '../material/material.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -22,7 +23,8 @@ import { MaterialModule } from '../material/material.module';
   imports: [
     CommonModule,
     TyRoutingModule,
-    MaterialModule
+    MaterialModule,
+    SharedModule
   ]
 })
 export class TyModule { }

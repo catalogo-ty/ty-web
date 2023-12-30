@@ -3,6 +3,13 @@
   "version": "0.0.2",
   "scripts": {
     "ng": "ng",
+    "gm": "ng g module",
+    "gmr": "ng g module --routing",
+    "gc": "ng g component --skip-tests",
+    "gs": "ng g service --skip-tests",
+    "gp": "ng g pipe --skip-tests",
+    "gi": "ng g interface",
+    "ge": "ng g environments",
     "start": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

@@ -1,0 +1,8 @@
+<mat-nav-list>
+    @for (item of sidebarRoutes; track $index) {
+        <mat-list-item [routerLink]="item.router">
+            <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+            <div matListItemTitle>{{ item.label }}</div>
+        </mat-list-item>
+    }
+</mat-nav-list>

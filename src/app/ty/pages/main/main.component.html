@@ -5,14 +5,16 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
+    <!-- Sidebar izquierdo -->
     <mat-sidenav #sidenavleft opened [ngStyle]="{width:'200px'}" mode="side">
-        <span>izquierdo</span>
+        <shared-sidebar></shared-sidebar>
     </mat-sidenav>
 
     <mat-sidenav-content>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 
+    <!-- Sidebar derecho -->
     <mat-sidenav #sidenavright opened [ngStyle]="{width:'200px'}" mode="side" position="end">
 <span>derecho</span>
     </mat-sidenav>
