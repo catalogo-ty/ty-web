@@ -1,6 +1,13 @@
 # Ty Web Changelog
 
 Los cambios realizados serán detallados en este archivo.
+## [0.0.3](https://github.com/catalogo-ty/ty-web/compare/v0.0.2...v0.0.3) (2023-12-30)
+
+
+### Features
+
+* **sidebar:** Agregar sidebar component con rutas ([a707504](https://github.com/catalogo-ty/ty-web/commit/a70750486f13412e2cb69104d799d6519e0203cf))
+
 ## [0.0.2](https://github.com/catalogo-ty/ty-web/compare/v0.0.1...v0.0.2) (2023-12-30)
 
 
