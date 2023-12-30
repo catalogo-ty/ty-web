@@ -6,6 +6,7 @@ import { CardTyComponent } from './components/card-ty/card-ty.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { TyRoutingModule } from './ty-routing.module';
 import { MainComponent } from './pages/main/main.component';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -20,7 +21,8 @@ import { MainComponent } from './pages/main/main.component';
   ],
   imports: [
     CommonModule,
-    TyRoutingModule
+    TyRoutingModule,
+    MaterialModule
   ]
 })
 export class TyModule { }
