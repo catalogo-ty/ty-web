@@ -1,6 +1,13 @@
 # Ty Web Changelog
 
 Los cambios realizados serán detallados en este archivo.
+## [0.0.5](https://github.com/catalogo-ty/ty-web/compare/v0.0.4...v0.0.5) (2023-12-31)
+
+
+### Features
+
+* Crear formulario, servicio y obtener categorias de ty ([e2007b4](https://github.com/catalogo-ty/ty-web/commit/e2007b4856fa07de0b22552201465e9c46dae3fc))
+
 ## 0.0.4 (2023-12-30)
 
 
