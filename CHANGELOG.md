@@ -1,6 +1,13 @@
 # Ty Web Changelog
 
 Los cambios realizados serán detallados en este archivo.
+## [0.0.6](https://github.com/catalogo-ty/ty-web/compare/v0.0.5...v0.0.6) (2023-12-31)
+
+
+### Features
+
+* Crear formulario reactivo y agregar datos iniciales de TY ([3f88049](https://github.com/catalogo-ty/ty-web/commit/3f88049752dc666571df70a487cff1921f2d84cb))
+
 ## [0.0.5](https://github.com/catalogo-ty/ty-web/compare/v0.0.4...v0.0.5) (2023-12-31)
 
 
