@@ -45,7 +45,13 @@ export class CrearTyComponent implements OnInit {
 
   agregarTy() {
 
-    if (this.tyForm.invalid) {
+    if (this.tyForm.get('categoriaRef')?.hasError('required')) {
+      console.log('Categoria es requerida');
+      return;
+    }
+
+    if (this.tyForm.get('imageUrl')?.hasError('required')) {
+      console.log('Imagen es requerida');
       return;
     }
 

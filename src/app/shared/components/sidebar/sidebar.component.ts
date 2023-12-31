@@ -18,6 +18,11 @@ export class SidebarComponent {
       icon: 'pets',
       label: 'Listado'
     },
+    {
+      router: '/deseos',
+      icon: 'star',
+      label: 'Deseos'
+    },
     
   ]
 

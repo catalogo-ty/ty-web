@@ -3,21 +3,25 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './pages/main/main.component';
 import { CrearTyComponent } from './pages/crear-ty/crear-ty.component';
 import { ListadoComponent } from './pages/listado/listado.component';
+import { DeseosComponent } from './pages/deseos/deseos.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    children:[
-        {
-            path:'crear', component: CrearTyComponent
-        },
-        {
-            path:'listar', component: ListadoComponent
-        },
-        {
-            path:'**', redirectTo: 'listar'
-        }
+    children: [
+      {
+        path: 'crear', component: CrearTyComponent
+      },
+      {
+        path: 'listar', component: ListadoComponent
+      },
+      {
+        path: 'deseos', component: DeseosComponent
+      },
+      {
+        path: '**', redirectTo: 'listar'
+      }
     ]
   }
 ];

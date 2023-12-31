@@ -9,6 +9,7 @@ import { MainComponent } from './pages/main/main.component';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DeseosComponent } from './pages/deseos/deseos.component';
 
 
 
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CrearTyComponent,
     CardTyComponent,
     BuscadorComponent,
-    MainComponent
+    MainComponent,
+    DeseosComponent
   ],
   imports: [
     CommonModule,
