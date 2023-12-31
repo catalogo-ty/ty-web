@@ -10,4 +10,6 @@ export interface Ty {
     color: string;
     fechaCreacion: Date;
     fechaActualizacion: Date;
+    imageUrl?: any
+    imageUrlText?: string;
 }

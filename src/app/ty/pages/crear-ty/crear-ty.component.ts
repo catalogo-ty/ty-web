@@ -10,25 +10,27 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CrearTyComponent implements OnInit {
 
-  categorias: CategoriaTy[]  = [];
+  categorias: CategoriaTy[] = [];
+  selectedFile: any = null;
 
   tyForm: FormGroup = this.fb.group({
-    categoriaRef: ['',[Validators.required]],
+    categoriaRef: ['', [Validators.required]],
     nombre: ['', [Validators.required]],
-    color: ['',[Validators.required]]
+    color: ['', [Validators.required]],
+    imageUrl: [null, [Validators.required]]
   })
 
 
   constructor(
-    private tyService:TyService,
+    private tyService: TyService,
     private fb: FormBuilder
-    ){}
+  ) { }
 
   ngOnInit(): void {
     this.obtenerCategorias();
   }
 
-  obtenerCategorias(){
+  obtenerCategorias() {
     this.tyService.obtenerCategorias().subscribe({
       next: (data) => {
         this.categorias = data;
@@ -36,10 +38,15 @@ export class CrearTyComponent implements OnInit {
     })
   }
 
-  agregarTy(){
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0] ?? null;
+    this.tyForm.get('imageUrl')?.setValue(this.selectedFile);
+  }
+
+  agregarTy() {
 
     if (this.tyForm.invalid) {
-      return ;
+      return;
     }
 
     const newTy: Ty = {
@@ -48,6 +55,8 @@ export class CrearTyComponent implements OnInit {
       fechaCreacion: new Date()
     }
 
+
+
     console.log(this.tyForm.value);
     this.tyService.agregarTy(newTy).subscribe({
       next: (res) => {
@@ -55,10 +64,13 @@ export class CrearTyComponent implements OnInit {
       },
       error: (error) => {
         console.log(error);
-        
+
       }
     })
-    
+
   }
+
+
+  
 
 }

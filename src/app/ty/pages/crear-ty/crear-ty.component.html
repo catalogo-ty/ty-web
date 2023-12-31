@@ -25,6 +25,14 @@
                             <input formControlName="color" type="text" matInput>
                         </mat-form-field>
 
+                        <div class="mb-3">
+                            <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+                            <input hidden (change)="onFileSelected($event)" #fileInput type="file">
+                            <span class="file-name ms-3">{{selectedFile?.name}}</span>
+                        </div>
+
+
+
                     </mat-card-content>
 
                     <mat-card-actions>
