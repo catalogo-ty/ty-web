@@ -11,12 +11,12 @@ export class SidebarComponent {
     {
       router: '/crear',
       icon: 'playlist_add',
-      label: 'Crear',
+      label: 'Agregar',
     },
     {
       router: '/listar',
       icon: 'pets',
-      label: 'Listar'
+      label: 'Listado'
     },
     
   ]

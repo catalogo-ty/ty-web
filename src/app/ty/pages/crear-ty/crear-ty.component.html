@@ -1,1 +1,39 @@
-<p>crear-ty works!</p>
+<div class="container">
+    <div class="row mt-5">
+        <h1 class="text-center">Nuevo Ty</h1>
+        <div class="col-lg-6 offset-lg-3">
+            <form>
+                <mat-card class="mt-3 shadow-lg">
+                    <mat-card-content>
+
+                        <mat-form-field class="w-100">
+                            <mat-label>Categoría</mat-label>
+                            <mat-select>
+                                @for (categoria of categorias; track $index) {
+                                <mat-option [value]="categoria.id">{{ categoria.nombre }}</mat-option>
+                                }
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <mat-label>Nombre</mat-label>
+                            <input type="text" matInput>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <mat-label>Color</mat-label>
+                            <input type="text" matInput>
+                        </mat-form-field>
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+                        <div class="d-grid gap-2 col-6 mx-auto mb-2">
+                            <button mat-raised-button color="primary">Agregar</button>
+                        </div>
+                    </mat-card-actions>
+                </mat-card>
+            </form>
+        </div>
+    </div>
+</div>
