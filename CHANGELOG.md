@@ -1,6 +1,13 @@
 # Ty Web Changelog
 
 Los cambios realizados serán detallados en este archivo.
+## [0.0.7](https://github.com/catalogo-ty/ty-web/compare/v0.0.6...v0.0.7) (2023-12-31)
+
+
+### Features
+
+* Guardar ty con url de la imagen en firestore/storage ([c466b9e](https://github.com/catalogo-ty/ty-web/commit/c466b9e66c969e82f67b62233e07a7125ddf933f))
+
 ## [0.0.6](https://github.com/catalogo-ty/ty-web/compare/v0.0.5...v0.0.6) (2023-12-31)
 
 
