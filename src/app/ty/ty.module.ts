@@ -8,6 +8,7 @@ import { TyRoutingModule } from './ty-routing.module';
 import { MainComponent } from './pages/main/main.component';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -24,7 +25,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     TyRoutingModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class TyModule { }

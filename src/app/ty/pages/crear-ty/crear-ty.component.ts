@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoriaTy } from '../../interfaces/categoria.interface';
+import { CategoriaTy, Ty } from '../../interfaces/categoria.interface';
 import { TyService } from '../../services/ty.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-ty',
@@ -11,7 +12,17 @@ export class CrearTyComponent implements OnInit {
 
   categorias: CategoriaTy[]  = [];
 
-  constructor(private tyService:TyService){}
+  tyForm: FormGroup = this.fb.group({
+    categoriaRef: ['',[Validators.required]],
+    nombre: ['', [Validators.required]],
+    color: ['',[Validators.required]]
+  })
+
+
+  constructor(
+    private tyService:TyService,
+    private fb: FormBuilder
+    ){}
 
   ngOnInit(): void {
     this.obtenerCategorias();
@@ -20,12 +31,34 @@ export class CrearTyComponent implements OnInit {
   obtenerCategorias(){
     this.tyService.obtenerCategorias().subscribe({
       next: (data) => {
-        console.log(data);
-        
         this.categorias = data;
       }
     })
   }
 
+  agregarTy(){
+
+    if (this.tyForm.invalid) {
+      return ;
+    }
+
+    const newTy: Ty = {
+      ...this.tyForm.value,
+      fechaActualizacion: new Date(),
+      fechaCreacion: new Date()
+    }
+
+    console.log(this.tyForm.value);
+    this.tyService.agregarTy(newTy).subscribe({
+      next: (res) => {
+        console.log(`Nuevo TY ID: ${res.id}`);
+      },
+      error: (error) => {
+        console.log(error);
+        
+      }
+    })
+    
+  }
 
 }
