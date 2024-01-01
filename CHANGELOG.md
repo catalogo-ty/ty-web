@@ -1,6 +1,13 @@
 # Ty Web Changelog
 
 Los cambios realizados serán detallados en este archivo.
+## [0.0.8](https://github.com/catalogo-ty/ty-web/compare/v0.0.7...v0.0.8) (2024-01-01)
+
+
+### Features
+
+* Listar ty con su imagen ([4ad41c5](https://github.com/catalogo-ty/ty-web/commit/4ad41c51a6af502d3c6e5f1d65839449a5a31f68))
+
 ## [0.0.7](https://github.com/catalogo-ty/ty-web/compare/v0.0.6...v0.0.7) (2023-12-31)
 
 
