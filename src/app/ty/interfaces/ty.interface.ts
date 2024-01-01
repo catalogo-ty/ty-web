@@ -8,8 +8,8 @@ export interface Ty {
     id?: string;
     nombre: string;
     color: string;
-    fechaCreacion: Date;
-    fechaActualizacion: Date;
+    fechaCreacion: any;
+    fechaActualizacion: any;
     imageUrl?: any
     imageUrlText?: string;
 }

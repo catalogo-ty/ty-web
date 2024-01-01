@@ -10,6 +10,8 @@ import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeseosComponent } from './pages/deseos/deseos.component';
+import { ModalDetalleComponent } from './components/modal-detalle/modal-detalle.component';
+import { ModalEditarComponent } from './components/modal-editar/modal-editar.component';
 
 
 
@@ -21,7 +23,9 @@ import { DeseosComponent } from './pages/deseos/deseos.component';
     CardTyComponent,
     BuscadorComponent,
     MainComponent,
-    DeseosComponent
+    DeseosComponent,
+    ModalDetalleComponent,
+    ModalEditarComponent
   ],
   imports: [
     CommonModule,

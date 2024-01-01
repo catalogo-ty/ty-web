@@ -1,0 +1,48 @@
+<h2 mat-dialog-title class="text-center">
+    {{ ty.nombre | titlecase }}
+    <button (click)="cerrarModal()" class="mt-3 float-end" mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
+        <mat-icon>close</mat-icon>
+    </button>
+</h2>
+
+
+<mat-dialog-content>
+    <div class="row">
+
+        <div class="col lg-6 text-center">
+            <img [src]="ty.imageUrlText" class="rounded-3" style="width: 200px; height: auto;" alt="ty img">
+        </div>
+
+        <div class="col lg-6">
+            <mat-list role="list">
+                <mat-list-item>
+                    <mat-icon matListItemIcon>pets</mat-icon>
+                    <div matListItemTitle>
+                        Categoria:
+                        @switch (ty.categoriaRef) {
+                        @case ('1') { Osito }
+                        @case ('2') { Animal }
+                        @case ('3') { Otro }
+                        }
+                    </div>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <mat-icon matListItemIcon>palette</mat-icon>
+                    <div matListItemTitle>Color: {{ ty.color }}</div>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <mat-icon matListItemIcon>calendar_month</mat-icon>
+                    <div matListItemTitle>Creación: {{ ty.creacion | date }}</div>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <mat-icon matListItemIcon>calendar_month</mat-icon>
+                    <div matListItemTitle>Actualización: {{ ty.actualizacion | date }}</div>
+                </mat-list-item>
+            </mat-list>
+
+        </div>
+    </div>
+</mat-dialog-content>
