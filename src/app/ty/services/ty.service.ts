@@ -29,7 +29,7 @@ export class TyService {
   // Agregar Ty
   agregarTy(ty: Ty) {
 
-    const imagePath = `ty/${ty.imageUrl.name}`;
+    const imagePath = `ty/${ty.nombre.replace(/\s+/g, '_')}`;
     const imageRef = ref(this.storage, imagePath);
     const imageTask = uploadBytes(imageRef, ty.imageUrl);
 
@@ -41,7 +41,7 @@ export class TyService {
 
         const tyData = {
           categoriaRef: ty.categoriaRef,
-          nombre: ty.nombre,
+          nombre: ty.nombre.replace(/\s+/g, '_'),
           color: ty.color,
           fechaCreacion: ty.fechaCreacion,
           fechaActualizacion: ty.fechaActualizacion,
