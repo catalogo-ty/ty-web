@@ -1,1 +1,10 @@
-<p>card-ty works!</p>
+<div [ngStyle]="{'background-image': 'url(' +ty.imageUrlText +')'}" class="ty_card">
+    <mat-card class="mat-elevation-z5" style="background-color: rgba(0,0,0,0.3); border-radius: 20px;
+    height: 10rem;">
+        <mat-card-header>
+            <mat-card-title>{{ ty.nombre }}</mat-card-title>
+        </mat-card-header>
+
+
+    </mat-card>
+</div>

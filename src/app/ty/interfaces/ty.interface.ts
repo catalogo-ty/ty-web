@@ -13,3 +13,4 @@ export interface Ty {
     imageUrl?: any
     imageUrlText?: string;
 }
+

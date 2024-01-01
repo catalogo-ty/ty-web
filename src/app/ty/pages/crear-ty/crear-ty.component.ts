@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoriaTy, Ty } from '../../interfaces/categoria.interface';
+import { CategoriaTy, Ty } from '../../interfaces/ty.interface';
 import { TyService } from '../../services/ty.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 

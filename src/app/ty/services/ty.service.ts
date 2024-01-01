@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData, orderBy, query } from '@angular/fire/firestore';
 import { Observable, from, map, switchMap, tap } from 'rxjs';
-import { CategoriaTy, Ty } from '../interfaces/categoria.interface';
+import { CategoriaTy, Ty } from '../interfaces/ty.interface';
 import { Storage, ref, uploadBytes, getDownloadURL } from '@angular/fire/storage'
 
 @Injectable({
@@ -18,6 +18,8 @@ export class TyService {
 
   // referencias
   private categoriaRef = collection(this.firestore, 'categoria');
+  private tyRef = collection(this.firestore, 'ty');
+
 
   // Obtener todas las categorias de Firebase
   obtenerCategorias() {
@@ -50,6 +52,14 @@ export class TyService {
         return addDoc( collection(this.firestore, 'ty'), tyData );
       })
     );
+  }
+
+  // Obtener lista de Ty
+  obtenerListaTy(){
+    // ordenar por fecha creacion
+    const q = query(this.tyRef, orderBy('fechaCreacion', 'desc'));
+    
+    return collectionData(q, { idField: 'id' }) as Observable<Ty[]>
   }
 
 }

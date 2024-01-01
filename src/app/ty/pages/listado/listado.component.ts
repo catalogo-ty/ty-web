@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TyService } from '../../services/ty.service';
 
 @Component({
   selector: 'app-listado',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrl: './listado.component.scss'
 })
 export class ListadoComponent {
+
+  constructor(private tyService: TyService){}
+
+  listaTy$ = this.tyService.obtenerListaTy();
+
+  
+
+
+
+
 
 }
