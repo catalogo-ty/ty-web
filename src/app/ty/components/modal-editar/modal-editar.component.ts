@@ -45,9 +45,6 @@ export class ModalEditarComponent implements OnInit {
   }
 
 
-     
-  
-
   cerrarModal(): void{
     this.dialogRef.close();
   }
@@ -79,5 +76,22 @@ export class ModalEditarComponent implements OnInit {
     })
     
   }
+
+
+  eliminarTy(){
+    this.tyService.eliminarTy(this.ty.id).subscribe({
+      next: ()=>{
+        console.log('Ty eliminado');
+        this.dialogRef.close();
+      },
+      error: (error)=>{
+        console.log(error);
+        
+      }
+    })
+    
+  }
+
+
 
 }

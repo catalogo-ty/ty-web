@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData, doc, orderBy, query, setDoc } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, orderBy, query, setDoc } from '@angular/fire/firestore';
 import { Observable, catchError, from, map, of, switchMap, tap } from 'rxjs';
 import { CategoriaTy, Ty } from '../interfaces/ty.interface';
 import { Storage, ref, uploadBytes, getDownloadURL, deleteObject } from '@angular/fire/storage'
@@ -111,5 +111,20 @@ export class TyService {
         ,{ merge: true }));
     }
   }
+
+
+  // eliminar un ty
+  eliminarTy(id: string){
+
+    const tyDocRef = doc( this.firestore, 'ty', id )
+    const promiseDelete = deleteDoc(tyDocRef)
+
+    return from(promiseDelete)
+
+
+  }
+
+
+
 
 }

@@ -47,8 +47,9 @@
                     <span class="file-name ms-3">{{selectedFile?.name}}</span>
                 </div>
     
-                <div class="d-grid gap-2 col-6 mx-auto mb-2">
-                    <button type="submit" mat-raised-button color="primary">Editar</button>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-2 mt-4">
+                    <button type="submit" mat-raised-button color="primary">Guardar cambios</button>
+                    <button (click)="eliminarTy()" type="button" mat-raised-button color="warn">Eliminar Ty</button>
                 </div>
             </form>
         </div>
