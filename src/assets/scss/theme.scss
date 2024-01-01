@@ -37,6 +37,14 @@ $dark-theme: mat.define-dark-theme(
 
     --mat-sidenav-content-background-color: #111827;
     --mat-sidenav-container-background-color: #1f2937;
+    --mdc-filled-text-field-container-color: #111827;
+    --mat-select-panel-background-color: #1f2937;
+
+    --mdc-dialog-container-color: #1f2937;
+
+    .mat-mdc-card {
+        background-color: #1f2937;
+    }
 }
 
 $my-typography: mat.define-typography-config();

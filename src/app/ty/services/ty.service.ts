@@ -1,8 +1,8 @@
 import { Injectable, inject } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData, orderBy, query } from '@angular/fire/firestore';
-import { Observable, from, map, switchMap, tap } from 'rxjs';
+import { Firestore, addDoc, collection, collectionData, doc, orderBy, query, setDoc } from '@angular/fire/firestore';
+import { Observable, catchError, from, map, of, switchMap, tap } from 'rxjs';
 import { CategoriaTy, Ty } from '../interfaces/ty.interface';
-import { Storage, ref, uploadBytes, getDownloadURL } from '@angular/fire/storage'
+import { Storage, ref, uploadBytes, getDownloadURL, deleteObject } from '@angular/fire/storage'
 
 @Injectable({
   providedIn: 'root'
@@ -36,8 +36,8 @@ export class TyService {
 
     return from(imageTask).pipe(
 
-      switchMap( () => getDownloadURL(imageRef)),
-      switchMap( (url: string) => {
+      switchMap(() => getDownloadURL(imageRef)),
+      switchMap((url: string) => {
 
         const tyData = {
           categoriaRef: ty.categoriaRef,
@@ -46,20 +46,70 @@ export class TyService {
           fechaCreacion: ty.fechaCreacion,
           fechaActualizacion: ty.fechaActualizacion,
           imageUrlText: url,
-          
+
         };
 
-        return addDoc( collection(this.firestore, 'ty'), tyData );
+        return addDoc(collection(this.firestore, 'ty'), tyData);
       })
     );
   }
 
   // Obtener lista de Ty
-  obtenerListaTy(){
+  obtenerListaTy() {
     // ordenar por fecha creacion
     const q = query(this.tyRef, orderBy('fechaCreacion', 'desc'));
-    
+
     return collectionData(q, { idField: 'id' }) as Observable<Ty[]>
+  }
+
+  actualizarTy(newty: Ty, oldTy: Ty): Observable<void> {
+
+    // Referencia al Ty original para su actualización
+    const tyDocRef = doc(this.firestore, 'ty', oldTy.id!);
+
+    if (newty.imageUrl && newty.imageUrl.name) {
+      // Borrar imagen previa
+      const oldImageRef = ref(this.storage, `ty/${oldTy.nombre}`);
+
+      from(deleteObject(oldImageRef)).pipe(
+        catchError((error) => {
+          console.error('Error al borrar la imagen antigua:', error);
+          return of(null);
+        })
+      );
+
+      // Generar nueva imagen
+      const imagePath = `ty/${newty.nombre.replace(/\s+/g, '_')}`;
+      const imageRef = ref(this.storage, imagePath);
+      const imageTask = uploadBytes(imageRef, newty.imageUrl);
+
+      return from(imageTask).pipe(
+        switchMap(() => getDownloadURL(imageRef)),
+        switchMap((url: string) => {
+          newty.imageUrlText = url; // Actualizar la URL de la imagen en los datos a guardar
+          return from(setDoc(tyDocRef,
+            {
+              categoriaRef: newty.categoriaRef,
+              nombre: newty.nombre.replace(/\s+/g, '_'),
+              color: newty.color,
+              fechaActualizacion: new Date(),
+              imageUrlText: newty.imageUrlText,
+            },
+            { merge: true }));
+        })
+      )
+
+    }
+    else {
+      return from(setDoc(tyDocRef,
+        {
+          categoriaRef: newty.categoriaRef,
+          nombre: newty.nombre.replace(/\s+/g, '_'),
+          color: newty.color,
+          fechaActualizacion: new Date(),
+        }
+        ,{ merge: true }));
+    }
   }
 
 }
