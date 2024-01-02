@@ -114,10 +114,20 @@ export class TyService {
 
 
   // eliminar un ty
-  eliminarTy(id: string){
+  eliminarTy(ty: Ty){
 
-    const tyDocRef = doc( this.firestore, 'ty', id )
+    const tyDocRef = doc( this.firestore, 'ty', ty.id! )
     const promiseDelete = deleteDoc(tyDocRef)
+
+    // eliminar la imagen de firebase
+    const oldImageRef = ref(this.storage, `ty/${ty.nombre}`);
+
+    from(deleteObject(oldImageRef)).pipe(
+      catchError((error) => {
+        console.error('Error al borrar la imagen:', error);
+        return of(null);
+      })
+    );
 
     return from(promiseDelete)
 

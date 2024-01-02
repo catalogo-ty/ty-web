@@ -3,6 +3,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { TyService } from '../../services/ty.service';
 import { CategoriaTy } from '../../interfaces/ty.interface';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
+import { AlertasService } from '../../services/alertas.service';
 
 @Component({
   selector: 'app-modal-editar',
@@ -10,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './modal-editar.component.scss'
 })
 export class ModalEditarComponent implements OnInit {
-  
+
   categorias$ = this.tyService.obtenerCategorias();
   selectedFile: any = null;
   imagenPreCargada: any = null
@@ -26,8 +28,9 @@ export class ModalEditarComponent implements OnInit {
     private dialogRef: MatDialogRef<ModalEditarComponent>,
     @Inject(MAT_DIALOG_DATA) public ty: any,
     private tyService: TyService,
-    private fb: FormBuilder
-  ){}
+    private fb: FormBuilder,
+    private alertaService: AlertasService
+  ) { }
 
   ngOnInit(): void {
     this.tyEditForm.reset(this.ty);
@@ -39,57 +42,74 @@ export class ModalEditarComponent implements OnInit {
 
     const reader = new FileReader();
     reader.onload = (e: any) => {
-        this.imagenPreCargada = e.target.result;
+      this.imagenPreCargada = e.target.result;
     };
     reader.readAsDataURL(this.selectedFile);
   }
 
 
-  cerrarModal(): void{
+  cerrarModal(): void {
     this.dialogRef.close();
   }
 
-  editarTy(){
+  editarTy() {
 
     if (this.tyEditForm.get('nombre')?.hasError('required')) {
-      console.log('Nombre es requerido');
+      this.alertaService.mensajeAlerta('Notificación', 'Debe ingresar un nombre para actualizar', 'info')
       return;
     }
 
     if (this.tyEditForm.get('color')?.hasError('required')) {
-      console.log('color es requerido');
+      this.alertaService.mensajeAlerta('Notificación', 'Debe ingresar un color para actualizar', 'info')
       return;
     }
-  
+
     console.log(this.tyEditForm.value);
 
     this.tyService.actualizarTy(this.tyEditForm.value, this.ty).subscribe({
       next: () => {
-        console.log('Actualizado!!!');
+        this.alertaService.mensajeAlerta('Ty actualizado', 'Datos del ty actualizados exitosamente', 'success')
         this.dialogRef.close();
-        
+
       },
-      error: (error)=> {
+      error: (error) => {
         console.log(error);
-        
+
       }
     })
-    
+
   }
 
 
-  eliminarTy(){
-    this.tyService.eliminarTy(this.ty.id).subscribe({
-      next: ()=>{
-        console.log('Ty eliminado');
-        this.dialogRef.close();
-      },
-      error: (error)=>{
-        console.log(error);
-        
+  eliminarTy() {
+
+    Swal.fire({
+      title: "¿Desea eliminar este Ty?",
+      showCancelButton: true,
+      cancelButtonText: "Cancelar",
+      confirmButtonText: "Eliminar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        this.tyService.eliminarTy(this.ty).subscribe({
+          next: () => {
+            Swal.fire({
+              title: "Ty eliminado",
+              icon: "info",
+              showConfirmButton: false,
+              timer: 2500
+            });
+            this.dialogRef.close();// cerrar modal
+          },
+          error: (error) => {
+            console.log(error);
+
+          }
+        })
+
       }
-    })
-    
+    });
+
   }
 
 
