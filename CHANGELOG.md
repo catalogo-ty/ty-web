@@ -1,6 +1,13 @@
 # Ty Web Changelog
 
 Los cambios realizados serán detallados en este archivo.
+## [0.1.1](https://github.com/catalogo-ty/ty-web/compare/v0.1.0...v0.1.1) (2024-01-02)
+
+
+### Features
+
+* Agregar alertas para los formularios ([b3ef0ad](https://github.com/catalogo-ty/ty-web/commit/b3ef0adcac2822248521006ba543dbb2571d2f05))
+
 ## [0.1.0](https://github.com/catalogo-ty/ty-web/compare/v0.0.8...v0.1.0) (2024-01-01)
 
 
