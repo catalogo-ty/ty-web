@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
+import { ResponsiveSidebarService } from '../../services/responsive-sidebar.service';
 
 @Component({
   selector: 'app-main',
@@ -9,12 +10,16 @@ import { Component, Inject, OnInit } from '@angular/core';
 export class MainComponent implements OnInit{
 
   public isDarkMode: boolean = true;
+  public isSidebarOpen: boolean = true;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
+    private sidebarService: ResponsiveSidebarService
   ){}
 
     ngOnInit(): void {
+
+      // Modo claro - oscuro
       if (this.isDarkMode) {
         this.document.body.classList.remove('light_mode');
       this.document.body.classList.add('dark_mode');
@@ -23,6 +28,14 @@ export class MainComponent implements OnInit{
         this.document.body.classList.remove('dark_mode')
         this.document.body.classList.add('light_mode');
       }
+
+      // Sidebar Responsivo
+      this.sidebarService.sidebarOpen$.subscribe({
+        next:(isOpen)=>{
+          this.isSidebarOpen = isOpen;
+        }
+      })
+
     }
 
 
@@ -39,5 +52,6 @@ export class MainComponent implements OnInit{
       this.isDarkMode = false;
     }
   }
+
 
 }

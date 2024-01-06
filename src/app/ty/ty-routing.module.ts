@@ -11,13 +11,13 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       {
-        path: 'crear', component: CrearTyComponent
+        path: 'crear', component: CrearTyComponent, title: 'Agregar Ty'
       },
       {
-        path: 'listar', component: ListadoComponent
+        path: 'listar', component: ListadoComponent, title: 'Mi Colección'
       },
       {
-        path: 'deseos', component: DeseosComponent
+        path: 'deseos', component: DeseosComponent, title: 'Lista de Deseos'
       },
       {
         path: '**', redirectTo: 'listar'
