@@ -1,21 +1,11 @@
-<div [ngStyle]="{'background-image': 'url(' +ty.imageUrlText +')'}" class="ty_card">
+<div (click)="verDetalle(ty)"
+    [ngStyle]="{'background-image': 'url(' +ty.imageUrlText +')'}"
+    class="ty_card"
+    style="cursor: pointer;">
     <mat-card class="mat-elevation-z5" style="background-color: rgba(0,0,0,0.3); border-radius: 20px;
     height: 10rem;">
         <mat-card-header>
             <mat-card-title class="text-light">{{ ty.nombre | nombreTy | titlecase }}</mat-card-title>
         </mat-card-header>
-
-        <mat-card-actions>
-            <button (click)="verDetalle(ty)" style="width: 30px; height: 30px;" mat-mini-fab color="primary"
-                aria-label="Example icon button with a menu icon">
-                <mat-icon>visibility</mat-icon>
-            </button>
-            <span class="spacer"></span>
-
-            <button (click)="editarTy(ty)" style="width: 30px; height: 30px;" mat-mini-fab color="accent"
-                aria-label="Example icon button with a menu icon">
-                <mat-icon>edit</mat-icon>
-            </button>
-        </mat-card-actions>
     </mat-card>
 </div>

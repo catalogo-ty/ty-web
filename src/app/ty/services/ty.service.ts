@@ -136,7 +136,7 @@ export class TyService {
   }
 
 
-  obtenerTyById(id: string): Observable<Ty | undefined>{
+  obtenerTyPorId(id: string): Observable<Ty | undefined>{
     const tyDocRef = doc(this.firestore, 'ty', id);
 
     return from(getDoc(tyDocRef)).pipe(

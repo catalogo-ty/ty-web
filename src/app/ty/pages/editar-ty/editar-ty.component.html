@@ -1,7 +1,53 @@
 <div class="container p-3">
-    <div class="row mt-2">
-        <h1 class="text-center">Editar Ty</h1>
+    <div class="row mt-2 px-3">
+        <h1 class="text-center mb-4">Editar Ty</h1>
 
-        
+        <div class="col-12 col-lg-6 col-md-6 col-sm-12 text-center mb-5">
+            @if (imagenPreCargada) {
+                <img [src]="imagenPreCargada" class="rounded-3" style="width: 300px; height: auto;" alt="ty img">
+                }
+                @else{
+                <img [src]="tyParaEditar?.imageUrlText" class="rounded-3" style="width: 300px; height: auto;" alt="ty img">
+    
+                }
+        </div>
+
+        <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+            <mat-card class="w-100">
+                <mat-card-content>
+                    <form [formGroup]="formEditar" (ngSubmit)="editarTy()">
+                        <mat-form-field class="w-100">
+                            <mat-label>Categoría</mat-label>
+                            <mat-select formControlName="categoriaRef">
+                                @for (categoria of categorias$ | async; track $index) {
+                                <mat-option [value]="categoria.id">{{ categoria.nombre }}</mat-option>
+                                }
+                            </mat-select>
+                        </mat-form-field>
+            
+                        <mat-form-field class="w-100">
+                            <mat-label>Nombre</mat-label>
+                            <input formControlName="nombre" type="text" matInput>
+                        </mat-form-field>
+            
+                        <mat-form-field class="w-100">
+                            <mat-label>Color</mat-label>
+                            <input formControlName="color" type="text" matInput>
+                        </mat-form-field>
+            
+                        <div class="mb-3">
+                            <button type="button" mat-raised-button (click)="fileInput.click()">Cargar Imagen</button>
+                            <input hidden (change)="onFileSelected($event)" #fileInput type="file">
+                            <span class="file-name ms-3">{{selectedFile?.name}}</span>
+                        </div>
+            
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-2 mt-4">
+                            <button type="submit" mat-raised-button color="primary">Guardar cambios</button>
+                            <button (click)="eliminarTy()" type="button" mat-raised-button color="warn">Eliminar Ty</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
 </div>
