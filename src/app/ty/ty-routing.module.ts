@@ -4,6 +4,7 @@ import { MainComponent } from './pages/main/main.component';
 import { CrearTyComponent } from './pages/crear-ty/crear-ty.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { DeseosComponent } from './pages/deseos/deseos.component';
+import { EditarTyComponent } from './pages/editar-ty/editar-ty.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,9 @@ const routes: Routes = [
     children: [
       {
         path: 'crear', component: CrearTyComponent, title: 'Agregar Ty'
+      },
+      {
+        path: 'editar/:id', component: EditarTyComponent, title: 'Editar Ty'
       },
       {
         path: 'listar', component: ListadoComponent, title: 'Mi Colección'

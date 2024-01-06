@@ -46,3 +46,7 @@
         </div>
     </div>
 </mat-dialog-content>
+
+<mat-dialog-actions class="p-4" align="end">
+    <button [routerLink]="'editar/'+ ty.id" [mat-dialog-close]="true" mat-raised-button color="accent">Editar</button>
+</mat-dialog-actions>

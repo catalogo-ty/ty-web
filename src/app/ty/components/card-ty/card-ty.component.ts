@@ -19,6 +19,7 @@ export class CardTyComponent {
   verDetalle(ty: Ty){
 
     const TyModal = {
+      id: ty.id,
       nombre: ty.nombre,
       color: ty.color,
       categoriaRef: ty.categoriaRef,

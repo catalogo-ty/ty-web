@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, orderBy, query, setDoc } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, getDoc, orderBy, query, setDoc } from '@angular/fire/firestore';
 import { Observable, catchError, from, map, of, switchMap, tap } from 'rxjs';
 import { CategoriaTy, Ty } from '../interfaces/ty.interface';
 import { Storage, ref, uploadBytes, getDownloadURL, deleteObject } from '@angular/fire/storage'
@@ -61,6 +61,7 @@ export class TyService {
 
     return collectionData(q, { idField: 'id' }) as Observable<Ty[]>
   }
+
 
   actualizarTy(newty: Ty, oldTy: Ty): Observable<void> {
 
@@ -134,6 +135,32 @@ export class TyService {
 
   }
 
+
+  obtenerTyById(id: string): Observable<Ty | undefined>{
+    const tyDocRef = doc(this.firestore, 'ty', id);
+
+    return from(getDoc(tyDocRef)).pipe(
+      map((doc)=>{
+        if (doc.exists()) {
+          const tyData = doc.data();
+
+          const tyObject: Ty = {
+            id: doc.id,
+            categoriaRef: tyData['categoriaRef'],
+            color: tyData['color'],
+            nombre: tyData['nombre'],
+            imageUrlText: tyData['imageUrlText']
+          }
+          
+          return tyObject;
+
+        } else {
+          return undefined;
+        }
+
+      })
+    )
+  }
 
 
 
