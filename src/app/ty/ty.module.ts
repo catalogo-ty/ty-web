@@ -11,7 +11,6 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeseosComponent } from './pages/deseos/deseos.component';
 import { ModalDetalleComponent } from './components/modal-detalle/modal-detalle.component';
-import { ModalEditarComponent } from './components/modal-editar/modal-editar.component';
 import { NombreTyPipe } from './pipes/nombre-ty.pipe';
 import { EditarTyComponent } from './pages/editar-ty/editar-ty.component';
 
@@ -27,7 +26,6 @@ import { EditarTyComponent } from './pages/editar-ty/editar-ty.component';
     MainComponent,
     DeseosComponent,
     ModalDetalleComponent,
-    ModalEditarComponent,
     NombreTyPipe,
     EditarTyComponent
   ],

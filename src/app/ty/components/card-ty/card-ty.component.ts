@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 import { Ty } from '../../interfaces/ty.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalDetalleComponent } from '../modal-detalle/modal-detalle.component';
-import { ModalEditarComponent } from '../modal-editar/modal-editar.component';
 
 @Component({
   selector: 'card-ty',
@@ -33,15 +32,4 @@ export class CardTyComponent {
       data: TyModal
     })
   }
-
-  editarTy(ty: Ty){
-    console.log(ty);
-    
-    this.dialog.open(ModalEditarComponent, {
-      data: ty
-    })
-  }
-
-
-
 }
