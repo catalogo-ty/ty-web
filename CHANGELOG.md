@@ -1,6 +1,21 @@
 # Ty Web Changelog
 
 Los cambios realizados serán detallados en este archivo.
+## [0.1.2](https://github.com/catalogo-ty/ty-web/compare/v0.1.1...v0.1.2) (2024-01-06)
+
+
+### Features
+
+* Crear e implementar servicio para sidebar responsivo ([91d745e](https://github.com/catalogo-ty/ty-web/commit/91d745ed6015b7797833b46e54362f92d1f9997f))
+* **editarTy:** Crear página de Editar Ty y método obtenerTyById ([913ab99](https://github.com/catalogo-ty/ty-web/commit/913ab99f90554c6187ad2f9104603502aef4e7b8))
+* Implementar página para editar ty ([8cdd1e1](https://github.com/catalogo-ty/ty-web/commit/8cdd1e1ae0f1e1f27adb23a24b7384797106f0f0))
+
+
+### Chores
+
+* Borrar componente Modal Editar ([9627078](https://github.com/catalogo-ty/ty-web/commit/9627078fce7f7df7c78dcc864e2e0b2ce24e8b1c))
+* Editar budgets de producción ([61e8234](https://github.com/catalogo-ty/ty-web/commit/61e8234286c1341ff388377b631972b9dda7594e))
+
 ## [0.1.1](https://github.com/catalogo-ty/ty-web/compare/v0.1.0...v0.1.1) (2024-01-02)
 
 
