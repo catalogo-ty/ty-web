@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, getDoc, orderBy, query, setDoc } from '@angular/fire/firestore';
-import { Observable, catchError, from, map, of, switchMap, tap } from 'rxjs';
+import { Observable, catchError, from, map, of, switchMap } from 'rxjs';
 import { CategoriaTy, Ty } from '../interfaces/ty.interface';
 import { Storage, ref, uploadBytes, getDownloadURL, deleteObject } from '@angular/fire/storage'
 
@@ -109,15 +109,15 @@ export class TyService {
           color: newty.color,
           fechaActualizacion: new Date(),
         }
-        ,{ merge: true }));
+        , { merge: true }));
     }
   }
 
 
   // eliminar un ty
-  eliminarTy(ty: Ty){
+  eliminarTy(ty: Ty) {
 
-    const tyDocRef = doc( this.firestore, 'ty', ty.id! )
+    const tyDocRef = doc(this.firestore, 'ty', ty.id!)
     const promiseDelete = deleteDoc(tyDocRef)
 
     // eliminar la imagen de firebase
@@ -136,11 +136,11 @@ export class TyService {
   }
 
 
-  obtenerTyPorId(id: string): Observable<Ty | undefined>{
+  obtenerTyPorId(id: string): Observable<Ty | undefined> {
     const tyDocRef = doc(this.firestore, 'ty', id);
 
     return from(getDoc(tyDocRef)).pipe(
-      map((doc)=>{
+      map((doc) => {
         if (doc.exists()) {
           const tyData = doc.data();
 
@@ -151,7 +151,7 @@ export class TyService {
             nombre: tyData['nombre'],
             imageUrlText: tyData['imageUrlText']
           }
-          
+
           return tyObject;
 
         } else {
@@ -162,6 +162,7 @@ export class TyService {
     )
   }
 
+  
 
 
 }

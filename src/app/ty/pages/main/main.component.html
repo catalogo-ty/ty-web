@@ -21,7 +21,7 @@
 
 <mat-sidenav-container>
     <!-- Sidebar izquierdo -->
-    <mat-sidenav #sidenavleft [opened]="isSidebarOpen" [ngStyle]="{width:'200px'}" mode="side">
+    <mat-sidenav #sidenavleft [opened]="false" [ngStyle]="{width:'200px'}" mode="side">
         <shared-sidebar></shared-sidebar>
     </mat-sidenav>
 
@@ -30,7 +30,7 @@
     </mat-sidenav-content>
 
     <!-- Sidebar derecho -->
-    <!-- <mat-sidenav #sidenavright opened [ngStyle]="{width:'200px'}" mode="side" position="end">
-       
-    </mat-sidenav> -->
+    <mat-sidenav #sidenavright [opened]="isSidebarRightOpen" [ngStyle]="{width:'300px'}" mode="side" position="end">
+       <ty-card-estadisticas></ty-card-estadisticas>
+    </mat-sidenav>
 </mat-sidenav-container>

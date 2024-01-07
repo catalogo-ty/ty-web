@@ -8,6 +8,8 @@ import { TyService } from '../../services/ty.service';
 })
 export class ListadoComponent {
 
+  
+
   constructor(private tyService: TyService){}
 
   listaTy$ = this.tyService.obtenerListaTy();

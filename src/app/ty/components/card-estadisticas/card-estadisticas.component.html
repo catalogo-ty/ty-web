@@ -1,0 +1,28 @@
+<div>
+    <mat-card class="m-3 mat-elevation-z8 animate__animated animate__fadeInRight">
+        <mat-card-content>
+           
+            <mat-list>
+                <h5>Estadísticas</h5>
+
+                <mat-list-item>
+                    <span matListItemLine>
+                        * Totales: {{ tyTotales$ | async }}
+                    </span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>                    
+                    @for (ty of tyPorCategoria$ | async; track $index) {
+                        <span matListItemLine>
+                            * {{ ty.categoria | categorias }}: {{ ty.total }}
+                        </span>
+                    }
+                </mat-list-item>
+            </mat-list>
+
+        </mat-card-content>
+    </mat-card>
+
+
+
+</div>

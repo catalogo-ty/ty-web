@@ -10,7 +10,8 @@ import { ResponsiveSidebarService } from '../../services/responsive-sidebar.serv
 export class MainComponent implements OnInit{
 
   public isDarkMode: boolean = true;
-  public isSidebarOpen: boolean = true;
+  public isSidebarLeftOpen: boolean = false;
+  public isSidebarRightOpen: boolean = true;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -32,7 +33,8 @@ export class MainComponent implements OnInit{
       // Sidebar Responsivo
       this.sidebarService.sidebarOpen$.subscribe({
         next:(isOpen)=>{
-          this.isSidebarOpen = isOpen;
+          this.isSidebarLeftOpen = isOpen;
+          this.isSidebarRightOpen = isOpen;
         }
       })
 
