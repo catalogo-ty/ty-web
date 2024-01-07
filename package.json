@@ -1,6 +1,6 @@
 {
   "name": "ty-web",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "scripts": {
     "ng": "ng",
     "gm": "ng g module",

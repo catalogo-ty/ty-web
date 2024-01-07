@@ -1,6 +1,13 @@
 # Ty Web Changelog
 
 Los cambios realizados serán detallados en este archivo.
+## [0.2.0](https://github.com/catalogo-ty/ty-web/compare/v0.1.2...v0.2.0) (2024-01-07)
+
+
+### Features
+
+* **estadisticas:** Crear servicio y card para estadísticas generales ([1b3ee6a](https://github.com/catalogo-ty/ty-web/commit/1b3ee6a5886db47dd7c160fe94dff801f30b388b))
+
 ## [0.1.2](https://github.com/catalogo-ty/ty-web/compare/v0.1.1...v0.1.2) (2024-01-06)
 
 
