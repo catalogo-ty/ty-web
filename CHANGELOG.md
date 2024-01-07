@@ -1,6 +1,13 @@
 # Ty Web Changelog
 
 Los cambios realizados serán detallados en este archivo.
+## [0.2.1](https://github.com/catalogo-ty/ty-web/compare/v0.2.0...v0.2.1) (2024-01-07)
+
+
+### Features
+
+* Modificar estilos para de estadisticas ([31859d1](https://github.com/catalogo-ty/ty-web/commit/31859d1b3f63c70979b7dde9e63ea0f2fac7e017))
+
 ## [0.2.0](https://github.com/catalogo-ty/ty-web/compare/v0.1.2...v0.2.0) (2024-01-07)
 
 
