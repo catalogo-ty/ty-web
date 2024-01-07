@@ -46,6 +46,14 @@ $dark-theme: mat.define-dark-theme(
         //background-color: #1f2937;
         background-color: #203552;
     }
+
+    .card_estadisticas {
+        background-color: #203552;
+    }
+
+    .txt_color {
+        color: white;
+    }
 }
 
 $my-typography: mat.define-typography-config();

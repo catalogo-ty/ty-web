@@ -1,8 +1,31 @@
 <div>
     <mat-card class="m-3 mat-elevation-z8 animate__animated animate__fadeInRight">
         <mat-card-content>
-           
-            <mat-list>
+            <h5>Estadísticas</h5>
+
+
+            <ul class="list-group list-group-flush">
+                @for (ty of tyPorCategoria$ | async; track $index ) {
+                <li
+                    class="card_estadisticas no_border_bottom txt_color list-group-item d-flex justify-content-between align-items-center">
+                    {{ ty.categoria | categorias }}
+                    <span class="badge bg-primary rounded-pill">{{ ty.total }}</span>
+                </li>
+                }
+            </ul>
+            <mat-divider></mat-divider>
+            @if (tyTotales$ | async; as tyTotales) {
+            <ul class="list-group list-group-flush">
+                <li
+                    class="card_estadisticas no_border_bottom txt_color list-group-item d-flex justify-content-between align-items-center">
+                    Totales
+                    <span class="badge bg-primary rounded-pill">{{ tyTotales }}</span>
+                </li>
+            </ul>
+            }
+
+            <!--Version alternativa de las estadisticas-->
+            <!-- <mat-list>
                 <h5>Estadísticas</h5>
 
                 <mat-list-item>
@@ -19,6 +42,8 @@
                     }
                 </mat-list-item>
             </mat-list>
+ -->
+
 
         </mat-card-content>
     </mat-card>
