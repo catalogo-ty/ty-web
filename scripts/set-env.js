@@ -9,7 +9,7 @@ const envFileContent = `
 export const environment = {
     firebaseConfig: {
         projectId: "${process.env.FIREBASE_PROJECTID}", 
-        ppId: "${process.env.FIREBASE_PPID}",
+        appId: "${process.env.FIREBASE_APPID}",
         storageBucket: "${process.env.FIREBASE_STORAGEBUCKET}",
         apiKey: "${process.env.FIREBASE_APIKEY}",
         authDomain: "${process.env.FIREBASE_AUTHDOMAIN}", 
