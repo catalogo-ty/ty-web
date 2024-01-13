@@ -1,6 +1,13 @@
 # Ty Web Changelog
 
 Los cambios realizados serán detallados en este archivo.
+## [0.3.0](https://github.com/catalogo-ty/ty-web/compare/v0.2.2...v0.3.0) (2024-01-13)
+
+
+### Features
+
+* Agregar botón en toolbar para ver las estadísticas ([bf6fabe](https://github.com/catalogo-ty/ty-web/commit/bf6fabef36399e9f44b6360d26bcc875cb8f1b5d))
+
 ## [0.2.2](https://github.com/catalogo-ty/ty-web/compare/v0.2.1...v0.2.2) (2024-01-13)
 
 
