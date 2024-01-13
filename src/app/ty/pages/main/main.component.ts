@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { ResponsiveSidebarService } from '../../services/responsive-sidebar.service';
+import { MatDrawerMode } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-main',
@@ -12,6 +13,9 @@ export class MainComponent implements OnInit{
   public isDarkMode: boolean = true;
   public isSidebarLeftOpen: boolean = false;
   public isSidebarRightOpen: boolean = true;
+
+  public showStatisticsButton: boolean = false;
+  public sidebarMode: MatDrawerMode = 'side';
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -33,6 +37,17 @@ export class MainComponent implements OnInit{
       // Sidebar Responsivo
       this.sidebarService.sidebarOpen$.subscribe({
         next:(isOpen)=>{
+
+          if (isOpen) {
+            this.sidebarMode = 'side';
+            this.showStatisticsButton = false;
+          }
+          else {
+            this.sidebarMode = 'over';
+            this.showStatisticsButton = true;
+
+          }
+
           this.isSidebarLeftOpen = isOpen;
           this.isSidebarRightOpen = isOpen;
         }
