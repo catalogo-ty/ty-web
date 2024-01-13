@@ -1,6 +1,20 @@
 # Ty Web Changelog
 
 Los cambios realizados serán detallados en este archivo.
+## [0.2.2](https://github.com/catalogo-ty/ty-web/compare/v0.2.1...v0.2.2) (2024-01-13)
+
+
+### Bug Fixes
+
+* Inicializar checkWindowSize en constructor para sidebar responsivo ([d9b8660](https://github.com/catalogo-ty/ty-web/commit/d9b8660e874726812ef60592933d46a152a38be4))
+
+
+### Chores
+
+* **build:** Crear script para generar archivo environment.production ([d46785e](https://github.com/catalogo-ty/ty-web/commit/d46785e1d4a04dc0e3d3b03fc70930eab8cb6e39))
+* Modificar estilos css ([25a2d10](https://github.com/catalogo-ty/ty-web/commit/25a2d10d83facf39ae22becdc73a8f5875650e3f))
+* Modificar set-env.js ([a5c88b7](https://github.com/catalogo-ty/ty-web/commit/a5c88b7bb21a85d6349c0a946c2aa6e638285c49))
+
 ## [0.2.1](https://github.com/catalogo-ty/ty-web/compare/v0.2.0...v0.2.1) (2024-01-07)
 
 
