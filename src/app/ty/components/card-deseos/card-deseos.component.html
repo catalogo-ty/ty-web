@@ -1,0 +1,19 @@
+<div class="card card_deseo shadow boder-1 rounded-4 mt-5">
+    <img class="ty_img" [src]="infoTyDeseado.urlImagen" alt="error">
+
+    <div class="card-body mt-5 p-3 text-center">
+        <p class="mt-4"><strong>{{ infoTyDeseado.nombre }}</strong></p>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon class="material-icon">more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button (click)="borrarDeseado()" mat-menu-item>
+                <mat-icon>check</mat-icon>
+                <span>Ya lo tengo</span>
+            </button>
+        </mat-menu>
+
+    </div>
+
+</div>

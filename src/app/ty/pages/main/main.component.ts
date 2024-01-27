@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
-import { ResponsiveSidebarService } from '../../services/responsive-sidebar.service';
+import { ResponsiveSidebarService } from '../../services/utils/responsive-sidebar.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalDeseosComponent } from '../../components/modal-deseos/modal-deseos.component';
 import { MatDrawerMode } from '@angular/material/sidenav';

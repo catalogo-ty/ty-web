@@ -53,6 +53,17 @@ $dark-theme: mat.define-dark-theme(
     .txt_color {
         color: white;
     }
+
+    .card_deseo {
+        background-color: #1f2937 !important;
+        p {
+            color: white !important;
+        }
+    }
+
+    .material-icon{
+        color: white !important;
+    }
 }
 
 $my-typography: mat.define-typography-config();

@@ -14,3 +14,8 @@ export interface Ty {
     imageUrlText?: string;
 }
 
+export interface TyDeseo {
+    id?: string;
+    nombre: string;
+    urlImagen: string;
+}

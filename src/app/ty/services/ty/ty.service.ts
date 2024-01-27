@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, getDoc, orderBy, query, setDoc } from '@angular/fire/firestore';
 import { Observable, catchError, from, map, of, switchMap } from 'rxjs';
-import { CategoriaTy, Ty } from '../interfaces/ty.interface';
+import { CategoriaTy, Ty } from '../../interfaces/ty.interface';
 import { Storage, ref, uploadBytes, getDownloadURL, deleteObject } from '@angular/fire/storage'
 
 @Injectable({
@@ -131,8 +131,6 @@ export class TyService {
     );
 
     return from(promiseDelete)
-
-
   }
 
 

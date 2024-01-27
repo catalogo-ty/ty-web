@@ -1,1 +1,11 @@
-<p>En proceso...</p>
+<div class="container p-3">
+    <div class="row mt-2">
+        <h1 class="text-center mb-4">Lista de Deseos</h1>
+
+        @for (ty of listaDeseados; track $index) {
+            <div class="col-lg-3 col-6 col-md-6 mb-5 animate__animated animate__fadeInLeft">
+                <ty-card-deseos [infoTyDeseado]="ty"></ty-card-deseos>
+            </div>
+        }
+    </div>
+</div>

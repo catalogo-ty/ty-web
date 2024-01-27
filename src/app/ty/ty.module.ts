@@ -16,6 +16,7 @@ import { EditarTyComponent } from './pages/editar-ty/editar-ty.component';
 import { CardEstadisticasComponent } from './components/card-estadisticas/card-estadisticas.component';
 import { CategoriasPipe } from './pipes/categorias.pipe';
 import { ModalDeseosComponent } from './components/modal-deseos/modal-deseos.component';
+import { CardDeseosComponent } from './components/card-deseos/card-deseos.component';
 
 
 
@@ -33,7 +34,8 @@ import { ModalDeseosComponent } from './components/modal-deseos/modal-deseos.com
     EditarTyComponent,
     CardEstadisticasComponent,
     CategoriasPipe,
-    ModalDeseosComponent
+    ModalDeseosComponent,
+    CardDeseosComponent
   ],
   imports: [
     CommonModule,

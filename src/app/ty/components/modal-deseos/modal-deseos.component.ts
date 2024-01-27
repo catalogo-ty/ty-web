@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { DeseosService } from '../../services/ty/deseos.service';
+import { AlertasService } from '../../services/utils/alertas.service';
 
 @Component({
   selector: 'app-modal-deseos',
@@ -18,10 +20,17 @@ export class ModalDeseosComponent {
   })
 
   constructor(private fb:FormBuilder,
-    private modalDeseosRef: MatDialogRef<ModalDeseosComponent>){}
+    private modalDeseosRef: MatDialogRef<ModalDeseosComponent>,
+    private deseosService: DeseosService,
+    private alertaService: AlertasService){}
+
 
   agregarDeseado(){
-    console.log(this.deseosForm.value);
+    this.deseosService.agregarDeseo(this.deseosForm.value).subscribe({
+      next: (res)=>{
+        this.alertaService.mensajeAlerta('Ty agregado a la lista de deseos', 'Espero que encuentres a este pequeño', 'success')
+      }
+    })
     
     this.deseosForm.reset();
   }

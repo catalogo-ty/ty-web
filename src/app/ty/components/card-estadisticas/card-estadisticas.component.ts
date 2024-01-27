@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EstadisticasService } from '../../services/estadisticas.service';
+import { EstadisticasService } from '../../services/ty/estadisticas.service';
 
 @Component({
   selector: 'ty-card-estadisticas',

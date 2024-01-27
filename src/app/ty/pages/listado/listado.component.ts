@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TyService } from '../../services/ty.service';
+import { TyService } from '../../services/ty/ty.service';
 
 @Component({
   selector: 'app-listado',
@@ -8,16 +8,8 @@ import { TyService } from '../../services/ty.service';
 })
 export class ListadoComponent {
 
-  
-
   constructor(private tyService: TyService){}
 
   listaTy$ = this.tyService.obtenerListaTy();
-
-  
-
-
-
-
 
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TyService } from './ty.service';
 import { Observable, map } from 'rxjs';
-import { Ty } from '../interfaces/ty.interface';
+import { Ty } from '../../interfaces/ty.interface';
 
 @Injectable({
   providedIn: 'root'

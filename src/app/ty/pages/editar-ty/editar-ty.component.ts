@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { TyService } from '../../services/ty.service';
+import { TyService } from '../../services/ty/ty.service';
 import { switchMap } from 'rxjs';
 import { Ty } from '../../interfaces/ty.interface';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AlertasService } from '../../services/alertas.service';
+import { AlertasService } from '../../services/utils/alertas.service';
 import Swal from 'sweetalert2';
 
 @Component({

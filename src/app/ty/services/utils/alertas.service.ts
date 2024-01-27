@@ -13,7 +13,7 @@ export class AlertasService {
       text: text,
       icon: icon,
       showConfirmButton: false,
-      timer: 2500
+      timer: 3000
     });
   }
 
