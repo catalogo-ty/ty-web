@@ -1,6 +1,29 @@
 # Ty Web Changelog
 
 Los cambios realizados serán detallados en este archivo.
+## [0.4.0](https://github.com/catalogo-ty/ty-web/compare/v0.2.1...v0.4.0) (2024-01-27)
+
+
+### Features
+
+* Agregar botón en toolbar para ver las estadísticas ([bf6fabe](https://github.com/catalogo-ty/ty-web/commit/bf6fabef36399e9f44b6360d26bcc875cb8f1b5d))
+* **deseos:** Crear estructura de modal para agregar ty a lista de deseos ([206962b](https://github.com/catalogo-ty/ty-web/commit/206962b41e42578997d5ca64378abc89aab37d93))
+
+
+### Bug Fixes
+
+* **estadisticas:** Ver estadisticas en modo responsivo ([c10a4ed](https://github.com/catalogo-ty/ty-web/commit/c10a4edac1964fd0ed61e85f7a576db77493144c))
+* Inicializar checkWindowSize en constructor para sidebar responsivo ([d9b8660](https://github.com/catalogo-ty/ty-web/commit/d9b8660e874726812ef60592933d46a152a38be4))
+
+
+### Chores
+
+* **build:** Crear script para generar archivo environment.production ([d46785e](https://github.com/catalogo-ty/ty-web/commit/d46785e1d4a04dc0e3d3b03fc70930eab8cb6e39))
+* Modificar estilos css ([25a2d10](https://github.com/catalogo-ty/ty-web/commit/25a2d10d83facf39ae22becdc73a8f5875650e3f))
+* Modificar set-env.js ([a5c88b7](https://github.com/catalogo-ty/ty-web/commit/a5c88b7bb21a85d6349c0a946c2aa6e638285c49))
+* **release:** Nueva versión - 0.2.2 ([da90e15](https://github.com/catalogo-ty/ty-web/commit/da90e151216b439c237e2c30f9f3e49cc778b1ba))
+* **release:** Nueva versión - 0.3.0 ([eca5d84](https://github.com/catalogo-ty/ty-web/commit/eca5d844ffe23a078f727cb599779843db4f6680))
+
 ## [0.3.0](https://github.com/catalogo-ty/ty-web/compare/v0.2.2...v0.3.0) (2024-01-13)
 
 
