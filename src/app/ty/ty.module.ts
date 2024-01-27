@@ -15,6 +15,7 @@ import { NombreTyPipe } from './pipes/nombre-ty.pipe';
 import { EditarTyComponent } from './pages/editar-ty/editar-ty.component';
 import { CardEstadisticasComponent } from './components/card-estadisticas/card-estadisticas.component';
 import { CategoriasPipe } from './pipes/categorias.pipe';
+import { ModalDeseosComponent } from './components/modal-deseos/modal-deseos.component';
 
 
 
@@ -31,7 +32,8 @@ import { CategoriasPipe } from './pipes/categorias.pipe';
     NombreTyPipe,
     EditarTyComponent,
     CardEstadisticasComponent,
-    CategoriasPipe
+    CategoriasPipe,
+    ModalDeseosComponent
   ],
   imports: [
     CommonModule,

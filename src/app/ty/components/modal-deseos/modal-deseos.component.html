@@ -1,0 +1,35 @@
+<h2 mat-dialog-title class="text-center mb-3">
+    Agregar a lista de Deseos
+    <button (click)="cerrarModal()" class="mt-3 float-end" mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
+        <mat-icon>close</mat-icon>
+    </button>
+</h2>
+
+<mat-dialog-content>
+
+    
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+
+                <form [formGroup]="deseosForm">
+
+                    <mat-form-field class="w-100">
+                        <mat-label>Nombre</mat-label>
+                        <input formControlName="nombre" type="text" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100">
+                        <mat-label>URL imagen</mat-label>
+                        <input formControlName="urlImagen" type="text" matInput>
+                    </mat-form-field>
+
+                </form>
+            </div>
+        </div>
+    
+        <div class="d-grid gap-2 col-6 mx-auto mb-2">
+            <button (click)="agregarDeseado()" type="button" [disabled]="deseosForm.invalid" mat-raised-button color="primary">Agregar</button>
+        </div>        
+        
+</mat-dialog-content>
+
