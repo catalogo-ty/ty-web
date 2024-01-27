@@ -40,6 +40,15 @@ export class MainComponent implements OnInit {
     // Sidebar Responsivo
     this.sidebarService.sidebarOpen$.subscribe({
       next: (isOpen) => {
+        if (isOpen) {
+          this.sidebarMode = 'side';
+          this.showStatisticsButton = false;
+        }
+        else{
+          this.sidebarMode = 'over';
+          this.showStatisticsButton = true;
+        }
+
         this.isSidebarLeftOpen = isOpen;
         this.isSidebarRightOpen = isOpen;
       }
