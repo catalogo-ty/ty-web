@@ -3,6 +3,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { ResponsiveSidebarService } from '../../services/responsive-sidebar.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalDeseosComponent } from '../../components/modal-deseos/modal-deseos.component';
+import { MatDrawerMode } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-main',
@@ -14,6 +15,9 @@ export class MainComponent implements OnInit {
   public isDarkMode: boolean = true;
   public isSidebarLeftOpen: boolean = false;
   public isSidebarRightOpen: boolean = true;
+
+  public showStatisticsButton: boolean = false;
+  public sidebarMode: MatDrawerMode = 'side';
 
   constructor(
     @Inject(DOCUMENT) private document: Document,

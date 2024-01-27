@@ -17,10 +17,16 @@
     </button>
     }
 
+    @if(showStatisticsButton){
+
+        <button (click)="sidenavright.toggle()" mat-icon-button>
+            <mat-icon>query_stats</mat-icon>
+        </button>
+    }
+
     <button (click)="listaDeseos()" mat-icon-button>
         <mat-icon>favorite</mat-icon>
     </button>
-
 </mat-toolbar>
 
 <mat-sidenav-container>
@@ -34,7 +40,7 @@
     </mat-sidenav-content>
 
     <!-- Sidebar derecho -->
-    <mat-sidenav #sidenavright [opened]="isSidebarRightOpen" [ngStyle]="{width:'300px'}" mode="side" position="end">
+    <mat-sidenav #sidenavright [opened]="isSidebarRightOpen" [ngStyle]="{width:'300px'}" [mode]="sidebarMode" position="end">
        <ty-card-estadisticas></ty-card-estadisticas>
     </mat-sidenav>
 </mat-sidenav-container>
